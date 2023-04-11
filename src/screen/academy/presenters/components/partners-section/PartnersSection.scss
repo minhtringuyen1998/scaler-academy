@@ -1,0 +1,20 @@
+.partners {
+  .sr-container {
+    .company-container {
+      padding : 10px;
+      .parner-company {
+        display: flex;
+        flex-basis: 227px;
+        width: 227px;
+        justify-content: center;
+        align-items: center;
+        padding : 10px;
+        @media (max-width: 414px) {
+          flex-basis: 110px;
+          width: 110px;
+          padding : 9px;
+        }
+      }
+    }
+  }
+}

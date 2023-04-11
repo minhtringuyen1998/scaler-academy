@@ -1,0 +1,90 @@
+@import "../assets/_colors.scss";
+@import "../assets/_fonts.scss";
+@import "../assets/mixins";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color : $colorPrimary;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  font-family: $fontMulish;
+  line-height: 1.4;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+
+}
+ html * {
+   box-sizing: border-box;
+ } 
+
+ img { 
+   max-width: 100%;
+ }
+ section , div  {
+   box-sizing: border-box;
+ }
+ a{
+   text-decoration: none;
+   cursor: pointer;
+   background-color: transparent;
+   &:hover {
+     text-decoration: none;
+   }
+ }
+ .bold {
+   font-weight: 600;
+ }
+ p, span ,h1 ,h2 ,h3 ,h4  ,h6{
+   margin: 0;
+ }
+
+ .sr-container {
+  max-width: 1200px;
+  margin : 0 auto;
+  padding : 0 20px; 
+}
+ @mixin margin-container {
+  margin : 50px 0;
+  background-color: #ffffff;
+}
+.section {
+  @include margin-container
+}
+.section__header {
+  text-align: center;
+  margin : 0 auto;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: black;
+}
+.section__sub-header {
+  color: #4e5f72;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.modal-open {
+ padding  : 0  !important;
+ overflow: unset !important;
+} 
+.blue {
+  color : #57aeff
+}
+.section.is-padded {
+  background-color: #e7f3ff;
+}
+@mixin font-bold {
+  font-weight: 800;
+}
+.fw-800{
+  @include font-bold
+}
+.dark-blue {color :#0041ca}
+@include responsive("xs") {
+  .section {
+    margin : 30px 0;
+  }
+}

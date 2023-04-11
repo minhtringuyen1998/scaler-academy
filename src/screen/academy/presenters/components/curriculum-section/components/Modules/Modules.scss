@@ -1,0 +1,43 @@
+.course-module-container {
+  flex-basis: 100%;
+  background-color: white;
+  border-radius: 4px;
+  color : black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 13px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 85px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  .left {
+    max-width: 400px;
+    flex:1 0 0;
+    color : inherit ;
+    margin-bottom: 5px;
+    p {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+  .right {
+    font-size: 16px;
+    color: inherit;
+    font-weight: 600;
+    .down-icon {
+      display: none;
+    }
+  }
+}
+.active-module {
+  background-color: #387ef7;
+  color: white; 
+  border-left: 10px solid #f5c844;
+}

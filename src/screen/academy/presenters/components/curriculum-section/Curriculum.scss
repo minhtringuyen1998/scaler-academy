@@ -1,0 +1,160 @@
+@import "../../../../../assets/colors";
+
+.curriculum-section {
+  background-color: #e8f2fe;
+  margin: 50px 0;
+  scroll-margin-block-start: 110px;
+  .sr-container {
+    .header-curriculum-title {
+      color: black;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 32px;
+      b > span {
+        background-position: 0 38px;
+      }
+    }
+    .academy-curriculum__course {
+      justify-content: space-between;
+      align-items: center;
+      .course-container {
+        flex-basis: 32.5%;
+        background-color: transparent;
+        color: #000;
+        &__item {
+          border-radius: 4px;
+          background-color: white;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          margin-bottom: 20px;
+          .coure-content {
+            color: inherit;
+            flex-basis: 50%;
+            h4 {
+              font-size: 26px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+          .circler-border {
+            text-align: end;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid black;
+            vertical-align: middle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .circle {
+              background-color: white;
+              width: 80%;
+              height: 80%;
+              border-radius: 50%;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .active-course {
+        background-color: #cae0fe;
+        color : #387ef7;
+        .course-container__item {
+          background-color: transparent;
+          .circler-border {
+            border-color:  #387ef7 ;
+          }
+          .circle {
+            background-color: #387ef7;
+          }
+        }
+      }
+    }
+    .academy-curriculum__course__content {
+      background-color: #cae0fe;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      min-height: 670px;
+      .list-modules {
+        flex-basis: 50%;
+        max-width: 50%;
+        & > .dropdown-lession {
+          display: none;
+        }
+      }
+
+    }
+  }
+  .container-list-lessions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 40%;
+    width: 100%;
+    .list-lessions {
+      background-color: #387ef7;
+      max-height: 490px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      max-width: 100%;
+      flex-basis: 40%;
+      gap: 10px;
+      position: relative;
+      flex : 1;
+      .process {
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+      }
+      .navigate-text {
+        background: #387ef7;
+        color: #f5c844;
+        text-decoration: underline;
+        font-size: 14px;
+        width: 90%;
+        bottom :15px;
+        cursor: pointer;
+      }
+      .wrapper-list-lession {
+        overflow: auto;
+        flex-basis: 100%;
+        .lession-container {
+          color: white;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          .line {
+            background-color: white;
+            height: 1px;
+          }
+          .lession-content {
+            margin: 2.5px 0;
+            .title-lession {
+              font-size: 14px;
+              font-weight: 600;
+              margin-bottom: 5px;
+            }
+            .units-lession {
+              .unit {
+                font-size: 12px;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .wrapper-btn{
+      margin-bottom: 20px;
+    }
+  }
+}

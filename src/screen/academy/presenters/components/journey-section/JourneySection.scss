@@ -1,0 +1,11 @@
+.journey-section {
+  .sr-container{
+    .journey-cardSet {
+      margin-top :40px;
+      .journey-cards {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}

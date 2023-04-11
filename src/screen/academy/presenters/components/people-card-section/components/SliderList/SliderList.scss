@@ -1,0 +1,47 @@
+@import "../../../../../../../assets/mixins";
+
+.arrow {
+  display: block;
+  position: absolute;
+  background-color: #eaeff4;
+  top : 50%;
+  transform: translateY(-50%);
+  padding : 35px 0;
+  z-index: 12;
+  border-radius: 8px;
+  &:hover {
+    background-color: #0f8cff;
+    svg {
+      color : white
+    }
+  }
+  svg {
+    font-size: 40px;
+    color: black;
+  }
+}
+.next { 
+  right:  -60px;
+  svg {
+    padding-right: 5px;
+  }
+}
+.prev {
+  left:  -60px;
+}
+@include responsive("max-tablet")  {
+  .arrow {
+    padding  : 9px 0;
+  }
+  .next {
+    right: -15px;
+    svg {
+      position: relative;
+      right: 2px;
+    }
+  }
+  .prev {
+    left: -15px;
+
+  }
+}

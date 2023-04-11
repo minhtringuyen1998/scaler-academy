@@ -1,0 +1,19 @@
+.search-term {
+  font-size: 16px;
+  font-weight: bold;
+  color :black;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  margin : 5px;
+  padding :10px;
+  background-color: #f6f7fb;
+  border-radius: 15px;
+  border:  none;
+  &:hover {
+    background-color: #ebf1f5;
+    border : 1px solid  #d4dce6;
+
+  }
+}

@@ -1,0 +1,315 @@
+@import "../../../assets/colors";
+@import "../../../assets/mixins";
+
+@include responsive("xs") {
+  .section {
+    margin : 30px 0;
+  }
+  //banner
+  section.banner-section {
+      background-image: unset;
+      height: unset;
+      .sr-container {
+        .banner__container {
+          flex-direction: column-reverse;
+          row-gap: 30px;
+          padding: 30px 0 0 0 ;
+          .banner__content {
+            align-items: center;
+            text-align: center;
+            .banner__title {
+              font-size: 30px;
+            }
+            .banner__group{
+              flex-direction: column-reverse;
+              row-gap: 20px;
+            }
+            .banner__group-button {
+              .banner-book-btn {
+                font-size: 14px;
+                font-weight: bold;
+                padding : 8px 28px;
+                line-height: 1.2;
+              }
+            }
+          }
+          .banner__img {
+            .banner-hexagon_container {
+              &:nth-of-type(1) {
+                font-size: 40px;
+                top :30%
+              }
+              &:nth-of-type(2) ,&:nth-of-type(4) {
+                font-size: 60px;
+              }
+              &:nth-of-type(3) {
+                font-size:  40px;
+              }
+            
+            }
+          }
+        }
+      }
+  }
+  //feature
+  section.feature-container {
+    margin-top : 0px;
+    .sr-container{
+      .glance-content {
+        box-shadow: unset;
+       .glance-title {
+        padding: 60px 0 0 0;    
+        font-size: 28px;     
+        margin-bottom: 10px;
+       }
+       .feature-items-container {
+         gap : 10px;
+         .wrapper-img {
+           flex-basis: 20%;
+           vertical-align: bottom;
+           img{
+             vertical-align: bottom;
+           }
+         }
+         .item-feature-container {
+           flex-basis: 100%;
+           flex-flow: row;
+           margin: 0;
+           padding :15px;
+           justify-content: flex-start;
+           align-items: center;
+           .item-feature-title {
+             font-size: 16px;
+             max-width: 65%;
+           }
+         }
+       }
+      }
+    }
+  }
+  //flexibility
+  section.flexibility-section{
+    margin : 0;
+    margin-bottom: 50px;
+    .sr-container{
+      .flexibility-items {
+       .flexibility-card-container{
+        flex-basis: 100%;
+        }
+      }
+    }
+  }
+  //currilum
+  section.curriculum-section{
+    .sr-container{
+      padding : 0;
+      .header-curriculum-title {
+        font-size: 25px;
+        b > span {
+          background-position: 0 30px;
+        }
+      }
+      .academy-curriculum__course{
+        flex-wrap: nowrap;
+        .course-container { 
+          flex-basis: 33.33%;
+        }
+        .course-container__item {
+          flex-direction: column-reverse;
+          margin-bottom: 10px;
+          .coure-content {
+            h4 { 
+              font-size: 18px;
+            }
+            p {
+              display:  none;
+            }
+          }
+          .circler-border{
+            width: 25px;
+            height: 25px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+  
+      .academy-curriculum__course__content{
+        padding : 10px;
+        display: block;
+        .list-modules {
+          max-width: 100%;
+          width: 100%;
+           .course-module-container {
+             position: relative;
+            .left {
+              h3 {
+                font-size: 16px;
+              }
+           }
+           .right {
+             .down-icon {
+               display: block;
+              position: absolute;
+              left: 85%;
+              margin-top: 5px;
+               svg {
+                 font-size: 20px;
+                 stroke-width: 5px;
+               }
+             }
+           }
+          }
+          .course-module-container + .dropdown-lession {
+            display: block;
+            max-height: 0;
+            will-change:  max-height;
+            transition: max-height 0.5s ease-in-out;
+            overflow: hidden;
+            max-width: 100%;
+          }
+           .active-module {
+            border-top: 10px solid #f5c844;
+            border-left: unset;
+            position: relative;
+            margin-bottom: unset;
+            .right {
+              display: none;
+            }
+           }
+           .active-module + .dropdown-lession {
+             max-height: 490px;
+             margin-bottom: 20px;
+           }
+        }
+        & > .container-list-lessions{
+          display: none;
+        }
+      }
+    }
+  }
+  //review
+  section.testimonial-section {
+    .sr-container { 
+      .testimonial__header {
+        max-width: 100%;
+        line-height: 1;
+        span {
+          letter-spacing: -1px;
+        }
+      }
+    }
+  }
+  //people
+  section.mentor-banner-section {
+    .banner-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+      padding : 17px 35px;
+      .img-wrapper {
+        img {
+          width: 70px;
+          height: 70px;
+          padding : 14px;
+        }
+      }
+      .content-banner {
+        flex: 1;
+        .title {
+          font-size: 21px;
+        }
+        .sub-title {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  //community
+  section.scaler-chat {
+    .sr-container {
+      .scaler-chat__body {
+        flex-flow: column-reverse;
+        border-radius: unset;
+        .scaler-chat__list {
+          .scaler-chat__list-item {
+            padding : 8px;
+            img {
+              width: 50px;
+              height: 50px;
+            }
+          }
+          .item-active {
+            border-right: 10px solid #f5c844;
+          }
+          .scaler-chat__item-desc {
+            max-width: unset;
+          }
+            
+        }
+        .scaler-chat__content{
+          .scaler-chat__image {
+            padding :9px;
+          }
+        }
+      }
+    }
+  }
+  //career
+  section.career-section {
+    .sr-container {
+      .career-list-card {
+        flex-direction: column;
+      }
+    }
+  }
+  section.journey-section {
+    .sr-container{
+      .journey-cardSet {
+        .journey-cards {
+          flex-flow: row wrap;
+          div {
+            flex-basis: 40%;
+            .journey__title {
+                font-size: 21px;
+                max-width: unset;
+            }
+            .journey__content {
+              font-size: 14px;
+            }
+            .journey__order {
+              margin-bottom: 80px;
+            }
+          }
+        }
+      }
+    }}
+  }
+@include responsive("max-tablet") {
+  section.review {
+    margin-top : -50px;
+    .sr-container {
+      .section__header {
+        font-size: 28px;
+        font-weight: 400;
+      }
+      @media (max-width : 414px) {
+        .alumni-link-wrapper{
+          min-width: 80% !important;
+        }
+      }
+      .alumni__banner-container{
+        overflow-x: auto;
+        justify-content: unset;
+        .alumni-link-wrapper{
+          min-width: 50%;
+          margin :20px;
+        }
+      }
+      .btn-seemore-container{
+        div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

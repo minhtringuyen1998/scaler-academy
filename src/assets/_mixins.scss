@@ -1,0 +1,87 @@
+@mixin fadeInKeyFrames($top, $time, $timeFunc: ease-in-out) {
+  @keyframes fade-in-text {
+    from {
+      opacity: 0;
+      top: #{$top};
+    }
+    to {
+      opacity: 1;
+      top: 0;
+    }
+  }
+  animation-name: fade-in-text;
+  animation-duration: #{$time}s;
+  animation-timing-function: #{$timeFunc};
+}
+
+@mixin fadeInAnimation($ele, $top: 100%, $time: 1) {
+  position: relative;
+  overflow: hidden;
+  #{$ele} {
+    position: absolute;
+    visibility: visible;
+    left: 0;
+    right: 0;
+    height: 100%;
+    @include fadeInKeyFrames($top, $time);
+  }
+}
+
+@mixin fadeInText($top: 100%, $time: 1, $timeFunc: ease-in-out) {
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: attr(data-content);
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    @include fadeInKeyFrames($top, $time, $timeFunc);
+  }
+}
+
+@mixin responsive($breakpoint: '', $min: '', $max: '') {
+  @if $breakpoint == 'xs' {
+    @media (max-width: 414px) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (min-width: 414px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == 'max-tablet' {
+    @media (max-width: 1100px) {
+      @content;
+    }
+  } @else if $breakpoint == 'min-tablet' {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'min' {
+    @media (min-width: #{$min}) {
+      @content;
+    }
+  } @else if $breakpoint == 'max' {
+    @media (max-width: #{$max}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{$min}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}

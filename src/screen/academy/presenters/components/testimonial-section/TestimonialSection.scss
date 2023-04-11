@@ -1,0 +1,21 @@
+.testimonial-section {
+  .sr-container{
+    .testimonial__header{
+      text-align: center;
+      max-width: 70%;
+      span {
+        background-position: 0  30px;
+        font-weight: bold;
+      }
+    }
+    .wrapper-list-mentor {
+      overflow-x: auto;
+      .testimonial__list{
+        display: inline-flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+      }
+    }
+  }
+}

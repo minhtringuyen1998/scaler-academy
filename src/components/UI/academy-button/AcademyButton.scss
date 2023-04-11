@@ -1,0 +1,44 @@
+@import "../../../assets/colors";
+
+.academy-button {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: $borderRadiusPrimary;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+
+.primary {
+  color: $primaryColor;
+  border: 1px solid $primaryColor;
+  background-color: $primaryColor;
+  &:hover {
+    background-color: $primaryColor;
+    color: $white;
+  }
+}
+.outline {
+  background-color: inherit;
+}
+.secondary {
+    background-color: #e21032;
+    color : $white;
+    &:hover {
+      background-color: #f13453;
+      box-shadow: 0 0.5rem 2.3rem 0 rgb(226 16 50 / 50%);
+    }
+}
+.light {
+  background-color: $white;
+  color :$primaryColor
+}
+.academy-button__true {
+  width: 100%;
+}

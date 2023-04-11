@@ -1,0 +1,78 @@
+@import "../../../../../../../assets/colors";
+
+.item-feature-container {
+  flex-basis: 29%;
+  display: flex;
+  flex-direction: column;
+  padding :20px;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius:  2 * $borderRadiusPrimary;
+  position: relative;
+  margin :15px;
+  overflow: hidden;
+  text-align: center;
+  .skew-badge-container {
+    position: absolute;
+    top : 0;
+    right: 0;
+    .skew-badge {
+      width: 140px;
+      height: 40px;
+      transform: rotate(40deg) translate(25px , -25px) 
+    }
+  }
+  .item-feature-title {
+    color : $white;
+    line-height: 1.2;
+    font-size: 24px;
+  }
+}
+.primary__bgColor {
+  background-color: #0f8cff;
+  .skew-badge-container {
+    .skew-badge {
+      background-color:#fec601 ;
+    }
+  }
+}
+.danger__bgColor {
+ background-color: #ea576f; 
+ .skew-badge-container {
+  .skew-badge {
+    background-color:#9243ce ;
+  }
+}
+}
+.success__bgColor {
+  background-color: #5cdb57;
+  .skew-badge-container {
+    .skew-badge {
+      background-color:#0f8cff ;
+    }
+  }
+}
+.secondary__bgColor {
+  background-color: #4c96e5;
+  .skew-badge-container {
+    .skew-badge {
+      background-color:#fec601 ;
+    }
+  }
+}
+.warning__bgColor {
+background-color: #fca733;
+.skew-badge-container {
+  .skew-badge {
+    background-color:#0f8cff ;
+  }
+}
+}
+.purple__bgColor {
+  background-color: #a768d7;
+  .skew-badge-container {
+    .skew-badge {
+      background-color:#fc9100 ;
+    }
+  }
+}

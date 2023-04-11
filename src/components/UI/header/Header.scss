@@ -1,0 +1,271 @@
+  @import "../../../assets/colors";
+  @import "../../../assets/mixins";
+  @keyframes slide-in-dow {
+    0%{
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  .container-header {
+    position: relative;
+    background: $white;
+    overflow: visible;
+    box-shadow:   0 2px 25px 0 rgb(54 66 117 / 12%);
+    z-index: 96;
+    transition: position 2s ease-in-out;
+    section.header-wrapper {
+      position: relative;
+      top: 0;
+      padding: 0 20px;
+      max-width: 1200px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: $white;
+
+      .header-brand {
+        display: flex;
+        margin-right: 4rem;
+
+        img {
+          width: 100px;
+          height: 35px;
+          vertical-align: bottom;
+        }
+      }
+
+      .header-contents  {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1 0 0;
+        height: 100%;
+
+        .header-nav {
+          display: flex;
+          flex: 1 0 0;
+          flex-direction: row;
+          height: 100%;
+
+          &_item {
+            display: inline-flex;
+            height: 100%;
+            margin: 0 10px;
+            color: #111111;
+            transition: color 1s ease-in-out;
+            font-weight: 600;
+            align-items: center;
+            font-size: 16px;
+
+            &:hover {
+              color: #0051fd;
+            }
+          }
+        }
+
+        .header-right {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          flex-direction: row;
+          font-size: 10px;
+          .header-playstore_icon {
+            position: relative;
+            margin-right: 15px;
+            cursor: pointer;
+            &:hover >  .header-playstore__popup-container {
+              display: block;
+            }
+            img {
+              vertical-align: bottom;
+              max-width: 100%;
+            }
+
+            .header-playstore__popup-container {
+              display: none;
+              width: 322px;
+              height: 154px;
+              color: #1a2c47;
+              padding: 5px 0px;
+              background-color: $white;
+              box-shadow: 0.2rem 0.3rem 1rem rgb(0 0 0 / 25%);
+              position: absolute;
+              z-index: 1;
+              left: -260px;
+              right: 0;
+              top: 70px;
+              border-radius: 12px;
+              &::after {
+                bottom: 99%;
+                left: 50%;
+                border: solid transparent;
+                content: "";
+                height: 0;
+                width: 0;
+                position: absolute;
+                border-color: rgba(255, 255, 255, 0);
+                border-bottom-color: #ffffff;
+                border-width: 20px;
+                margin-left: 99px;
+              }
+              .header-playstore-popup {
+                display: flex;
+                height: 100%;
+                justify-content: space-around;
+                align-items: center;
+                padding : 24px;
+                &-left {
+                  display: flex;
+                  flex-direction: column;
+                  flex-grow: 1;
+                  margin-right: 37px;
+                  gap :10px;
+                  flex-basis: 0;
+                  .header-playstore-popup-title{
+                    font-size:  16px;
+                  }
+                  .header__playstore-popup-img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+          .auth-options {
+            font-size: 1.6em;
+          }
+          .header-apply {
+            margin-right: 10px;
+          }
+        }
+      }
+      .header-contents-res{
+        display: none;
+      }
+      .header-burger-button {
+        display: none;
+        position: absolute;
+        right: 20px;
+        transform: translateY(-50%);
+        top : 50%;
+        z-index: 4;
+        .burger {
+          cursor: pointer;
+          .burger__line {
+            margin : 5px 0;
+            width: 25px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $primaryColor;
+            transition: 180ms;
+            will-change: transform;
+            perspective :100px
+          }
+        }
+      }
+      .menu-animation {
+        .burger {
+         div:first-child {
+          transform: translateY(7px) rotate(-45deg);
+         }
+         div:last-child{
+           transform: translateY(-7px) rotate(45deg);
+         }
+         div:nth-child(2) {
+           transform: scale(0);
+         }
+        }
+      }
+
+    }
+    .header-backdrop-menu {
+      background-color: black;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 2;
+      display: none;
+    }
+  }
+  .ticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 96;
+    animation: slide-in-dow  360ms ease-in  1 alternate forwards;
+    width: 100%;
+
+  }
+  @include responsive("max-tablet") {
+    .container-header {
+      section.header-wrapper {
+        .header-contents {
+          display: none;
+        }
+        .header-contents-res {
+          display: flex;
+          width: 70%;
+          height: 100vh;
+          background-color: white;
+          position: fixed;
+          top: 0;
+          right: 0;
+          z-index: 4;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 300px;
+          transform: translateX(100%);
+          will-change: transform;
+          transition: 360ms;
+          .header-nav ,.header-right {
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            flex-grow: 0;
+            gap : 10px;
+          }
+          .header-nav {
+            padding :20px;
+            a {
+              height: auto;
+              margin: 0;
+            }
+          }
+          .header-right {
+            align-items: flex-start;
+            padding: 0px 20px 20px 20px;
+            .header-playstore_icon{
+              display: none;
+            }
+          }
+        }
+        .res-menu {
+          transform: translateX(0);
+        }
+        .header-burger-button {
+          display: block;
+        }
+      }
+      .backdrop-open {
+        display: block;
+      }
+    }
+  }
+

@@ -1,0 +1,33 @@
+.review {
+  text-align: center;
+  color : black;
+  scroll-margin-block-start: 110px;
+  .sr-container {
+    .section__header{
+      font-size:32px ;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .quick-filter{
+      margin : 20px;
+      .filter-term {
+        font-size: 14px;
+        color : #0f1c37;
+        text-align: start;
+      }
+    }
+    .alumni__banner-container{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .btn-seemore-container {
+      margin-top: 20px;
+      .seemore-btn {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}

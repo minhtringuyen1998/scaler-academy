@@ -1,5 +1,9 @@
 .people-card-section {
   scroll-margin-block-start: 110px;
+
+}
+#mentor {
+  scroll-margin-block-start: 110px;
   .sr-container {
     .mentor-heading {
       margin : 30px 0;
@@ -7,9 +11,6 @@
     .mentor-sub {
       margin :30px;
       font-size: 18px;
-    }
-    #mentor {
-  scroll-margin-block-start: 110px;
     }
 
   }

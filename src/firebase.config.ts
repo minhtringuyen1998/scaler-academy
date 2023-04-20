@@ -1,14 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp  } from "firebase/app";
+import firebase ,  { initializeApp  } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { initializeFirestore, CACHE_SIZE_UNLIMITED } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDvXfsovGSNrOVqMZk8hOgISOLkzi6T8rY",
   authDomain: "scaler-academy-2a06f.firebaseapp.com",
@@ -18,10 +14,9 @@ const firebaseConfig = {
   appId: "1:816018495330:web:11c7029f8cbaeda168be3b",
   measurementId: "G-JXBLBR04QW"
 };
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const firestoreDb =initializeFirestore(app , {
   cacheSizeBytes : CACHE_SIZE_UNLIMITED
 })
-const analytics = getAnalytics(app);
 export const db = getFirestore(app);
+export const auth = getAuth(app);

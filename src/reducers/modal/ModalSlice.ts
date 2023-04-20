@@ -20,9 +20,9 @@ const modalSlice = createSlice({
   initialState,
   reducers  : {
     openModal : (state ,action :  PayloadAction<IModalState>) => {
-        return {
-          ...action.payload
-        }
+      const {nameModal , dataModal} = action.payload
+      state.nameModal = nameModal
+      state.dataModal = dataModal
     },
     closeModal : () => {
       return initialState

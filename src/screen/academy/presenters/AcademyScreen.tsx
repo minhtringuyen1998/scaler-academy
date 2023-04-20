@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import BannerSection from "./components/banner-section/BannerSection";
 import FeatureSection from "./components/feature-section/FeatureSection";
 import "./AcademyScreen.scss";
@@ -15,6 +15,9 @@ import CareerBannerSection from "./components/career-banner-roadmap/CareerBanner
 import JourneySection from "./components/journey-section/JourneySection";
 import MeetSection from "./components/meet-section/MeetSection";
 const AcademyScreen = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <BannerSection />

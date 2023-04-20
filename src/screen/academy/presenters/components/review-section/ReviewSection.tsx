@@ -4,6 +4,7 @@ import SearchTerm from "./components/search-term/SearchTerm";
 import AlumiTestimonialCard from "./components/alumni-testimonial-card/AlumiTestimonialCard";
 import AcademyButton from "components/UI/academy-button/AcademyButton";
 import { useGetMentorsQuery } from "reducers/mentors/MentorSlice";
+import { useActiveLink } from "hooks/hooks";
 export interface IMentorData {
   id: number;
   type: string;
@@ -11,9 +12,9 @@ export interface IMentorData {
 }
 const ReviewSection = () => {
   const { data: mentorList } = useGetMentorsQuery(4);
-
+  const { ref } = useActiveLink("review");
   return (
-    <section className="review" id="review">
+    <section className="review" id="review" ref={ref}>
       <div className="sr-container">
         <h3 className="section__header">
           Discover &amp; connect with Alumni who have walked the same path as

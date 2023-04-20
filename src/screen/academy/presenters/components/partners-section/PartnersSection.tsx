@@ -44,9 +44,8 @@ let companyName: string[] = [
 const PartnersSection = () => {
   const [mobile, setMobile] = React.useState<boolean>();
   useEffect(() => {
-    console.log("run");
     setMobile(isMobile());
-  }, [navigator.userAgent]);
+  }, [isMobile()]);
   return (
     <section className="section partners">
       <div className="sr-container">

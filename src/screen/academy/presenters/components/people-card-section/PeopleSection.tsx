@@ -6,8 +6,10 @@ import PeopleCard from "./components/PeopleCard/PeopleCard";
 import PeopleModalInfo from "./components/PeopleModalInfo/PeopleModalInfo";
 import { openModal, closeModal } from "reducers/modal/ModalSlice";
 import { ModalName } from "utils/modalName";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetMentorsQuery } from "reducers/mentors/MentorSlice";
+import { useActiveLink } from "hooks/hooks";
+import { RootState } from "store";
 const PeopleSection = () => {
   const {
     data: mentors,
@@ -16,10 +18,14 @@ const PeopleSection = () => {
     isFetching,
   } = useGetMentorsQuery(20);
   const dispatch = useDispatch();
-
+  const { ref } = useActiveLink("teaching");
+  const { ref: refMentor } = useActiveLink("mentor");
+  const isShowModal =
+    useSelector((state: RootState) => state.modalSlice.nameModal) ===
+    ModalName.MODAL_PEOPLE_INFO;
   return (
     <>
-      <section className=" section people-card-section" id="teaching">
+      <section className=" section people-card-section" id="teaching" ref={ref}>
         <div className="sr-container">
           <h3 className="section__header">
             Our <strong>teaching army</strong> will make you{" "}
@@ -52,7 +58,21 @@ const PeopleSection = () => {
                 );
               })}
           </SliderList>
-          <h3 className="section__header mentor-heading" id="mentor">
+        </div>
+        {isShowModal && (
+          <PeopleModalInfo
+            show={isShowModal}
+            onHide={() => dispatch(closeModal())}
+          />
+        )}
+      </section>
+      <section id="mentor" className="section mentor">
+        <div className="sr-container">
+          <h3
+            className="section__header mentor-heading"
+            id="mentor"
+            ref={refMentor}
+          >
             {" "}
             Our{" "}
             <strong>
@@ -85,7 +105,6 @@ const PeopleSection = () => {
               })}
           </SliderList>
         </div>
-        <PeopleModalInfo onHide={() => dispatch(closeModal())} />
       </section>
     </>
   );

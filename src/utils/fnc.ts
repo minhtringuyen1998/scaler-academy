@@ -7,3 +7,7 @@ export const isMobile = function() {
   );
   return _isMobile;
 }
+export const convertProcress = (i = ""): string => {
+  if (parseInt(i) < 1) return `${i} Month`;
+  return `${i} Months`;
+};

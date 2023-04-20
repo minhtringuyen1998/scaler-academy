@@ -3,6 +3,7 @@ import React, { ReactElement } from "react";
 import "./Modules.scss";
 import { AiOutlineDown } from "react-icons/ai";
 import { IModule } from "utils/data";
+import { convertProcress } from "utils/fnc";
 export interface ModuleProps extends IModule {
   index?: number;
   nameModule: string;
@@ -20,10 +21,6 @@ const Modules = (props: ModuleProps): ReactElement => {
     handleClick = () => {},
     modulesActive,
   } = props;
-  const convertProcress = (i: string): string => {
-    if (parseInt(i) < 1) return `${i} Month`;
-    return `${i} Months`;
-  };
   return (
     <>
       <div

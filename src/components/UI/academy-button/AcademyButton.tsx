@@ -9,9 +9,10 @@ interface AcademyButtonProps {
   mode?: "outline" | "solid" | "text";
   variant?: "primary" | "secondary" | "light";
   fullWidth?: boolean;
+  type?: "button" | "submit";
 }
 const AcademyButton = (props: AcademyButtonProps) => {
-  const { classes = [] } = props;
+  const { classes = [], onClick = () => {}, type = "button" } = props;
   return (
     <div
       className={clsx(
@@ -22,7 +23,9 @@ const AcademyButton = (props: AcademyButtonProps) => {
         ...classes
       )}
     >
-      {props.content}
+      <button type={type} className="btn" onClick={onClick}>
+        {props.content}
+      </button>
     </div>
   );
 };

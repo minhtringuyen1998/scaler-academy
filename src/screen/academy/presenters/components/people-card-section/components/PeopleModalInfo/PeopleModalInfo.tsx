@@ -5,17 +5,15 @@ import { ModalName } from "utils/modalName";
 import { ImageAvatar, ImageCompany, HeaderModal } from "./style";
 interface IPeopleModalInfoProps {
   onHide: () => void;
+  show: boolean;
 }
 const PeopleModalInfo = (props: IPeopleModalInfoProps) => {
-  const { onHide } = props;
-  const isShow =
-    useSelector((state: RootState) => state.modalSlice.nameModal) ===
-    ModalName.MODAL_PEOPLE_INFO;
+  const { onHide, show } = props;
   const dataPeople = useSelector(
     (state: RootState) => state.modalSlice.dataModal
   );
   return (
-    <Modal show={isShow} centered onHide={onHide}>
+    <Modal show={show} centered onHide={onHide}>
       <HeaderModal closeButton>
         <p className="fw-800">More Detail</p>
       </HeaderModal>

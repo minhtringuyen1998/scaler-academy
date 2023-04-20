@@ -6,12 +6,37 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: center;
-  padding: 10px 30px;
   font-size: 16px;
   cursor: pointer;
   overflow: hidden;
   border-radius: $borderRadiusPrimary;
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  padding : unset !important;
+  @media (max-width : 414px) {
+    font-size: unset;
+    .btn {
+      padding :13px !important;
+      font-size: 12px !important;
+      font-weight: 900;
+    }
+  }
+   .btn{
+    background-color: transparent;
+    color : inherit;
+    display: inline;
+    outline: unset;
+    border: unset;
+    padding: 10px 30px;
+    width: 100%;
+    display: block;
+    font-size: inherit;
+    &:active ,&:focus-visible {
+      outline: unset !important;
+      background-color: unset !important;
+      border-color: unset !important;
+
+    }
+   }
 }
 
 
@@ -37,7 +62,7 @@
 }
 .light {
   background-color: $white;
-  color :$primaryColor
+  color :$primaryColor;
 }
 .academy-button__true {
   width: 100%;

@@ -68,9 +68,27 @@
             font-weight: 600;
             align-items: center;
             font-size: 16px;
-
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              width: 0;
+              height: 5px;
+              background-color: #0051fd;
+              -webkit-transition: 360ms;
+              transition: 360ms;
+            }
             &:hover {
               color: #0051fd;
+            }
+          }
+          .active {
+            color: #0051fd;
+            &::after {
+              left: 0;
+               width: 100%;
             }
           }
         }

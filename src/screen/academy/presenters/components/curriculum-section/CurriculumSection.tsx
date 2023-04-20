@@ -7,6 +7,8 @@ import { ICourse, IModule, listCourse } from "utils/data";
 import Modules from "./components/Modules/Modules";
 import "./Curriculum.scss";
 import { useInView } from "framer-motion";
+import { convertProcress } from "utils/fnc";
+import { useActiveLink } from "hooks/hooks";
 export interface ILession {
   titleLession: string;
   listUnit: string[];
@@ -21,10 +23,7 @@ const CurriculumSection = () => {
     name: string;
     index: number;
   }>();
-  const convertProcress = (i = ""): string => {
-    if (parseInt(i) < 1) return `${i} Month`;
-    return `${i} Months`;
-  };
+  const { ref } = useActiveLink("curriculum");
   useEffect(() => {
     setModule(course.modules[0]);
   }, [course]);
@@ -50,10 +49,8 @@ const CurriculumSection = () => {
       handleChangeModule(module);
     }
   }, [module, handleChangeModule]);
-  const curriculumRef = useRef(null);
-  const isInView = useInView(curriculumRef);
   return (
-    <section id="curriculum" className="curriculum-section" ref={curriculumRef}>
+    <section id="curriculum" className="curriculum-section" ref={ref}>
       <div className="sr-container">
         <h3 className="header-curriculum-title">
           <b>Curriculum</b> is designed to make you{" "}

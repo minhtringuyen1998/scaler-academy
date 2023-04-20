@@ -1,5 +1,6 @@
 import TextUnderline from "components/UI/text-undeline/TextUnderline";
 import React from "react";
+import { renderKeyProps } from "utils/fnc";
 import JourneyCard from "./components/JourneyCard/JourneyCard";
 import "./JourneySection.scss";
 let dataJourneyCards = [
@@ -46,7 +47,13 @@ const JourneySection = () => {
         <div className="journey-cardSet">
           <div className="journey-cards">
             {dataJourneyCards.map((journey: any, index: number) => {
-              return <JourneyCard {...journey} order={index + 1} />;
+              return (
+                <JourneyCard
+                  {...journey}
+                  order={index + 1}
+                  key={renderKeyProps(journey, index)}
+                />
+              );
             })}
           </div>
         </div>
